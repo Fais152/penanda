@@ -1,0 +1,26 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Penanda",
+        "version": "1.0.1",
+        "description": "Bookmarks sharing",
+        "termOfService": "https://policymaker.io/terms-conditions-ready/",
+        "license": {
+            "name": "Apache 2.0",
+             "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "contact": {
+            "name": "Muhammad Yuda Yudistira",
+            "email": "yudistira.belajar@gmail.com",
+            "url": "https://www.linkedin.com/in/muhammad-yuda-94062a244/"
+        }
+    },
+    "servers": [
+        {
+            "url": "penanda.test",
+            "description": "Penanda web server"
+        }
+    ],
+    "paths": {},
+    "components": {}
+}
