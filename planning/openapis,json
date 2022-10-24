@@ -21,6 +21,36 @@
             "description": "Penanda web server"
         }
     ],
-    "paths": {},
+    "paths": {
+        "/bookmarks": {
+            "get": {
+                "tags": ["Bookmarks"],
+                "summary": "Get all bookmarks",
+                "description": "Get all existing bookmarks in database"
+            },
+            "post": {
+                "tags": ["Bookmarks"],
+                "summary": "Create new bookmark",
+                "description": "Create new bookmark to database"
+            }
+        },
+        "/bookmarks/{bookmark_id}": {
+            "get": {
+                "tags": ["Bookmarks"],
+                "summary": "Get bookmark by id",
+                "description": "Get bookmarks by id in database"
+            },
+            "put": {
+                "tags": ["Bookmarks"],
+                "summary": "Update bookmark by id",
+                "description": "Update bookmark by id in database"
+            },
+            "delete": {
+                "tags": ["Bookmarks"],
+                "summary": "Delete bookmark by id",
+                "description": "Delete bookmark by id in database"
+            }
+        }
+    },
     "components": {}
 }
