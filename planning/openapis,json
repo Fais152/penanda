@@ -26,7 +26,38 @@
             "get": {
                 "tags": ["Bookmarks"],
                 "summary": "Get all bookmarks",
-                "description": "Get all existing bookmarks in database"
+                "description": "Get all existing bookmarks in database", 
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Filter bookmarks by name",
+                        "require": false,
+                        "schema": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 50
+                        },
+                        "examples": {
+                            "Frontend Bookmark": {
+                                "description": "Example filter bookmarks by name",
+                                "value": "Frontend Bookmark"
+                            },
+                            "Fullstack Bookmark": {
+                                "description": "Example filter bookmarks by name",
+                                "value": "fullstack Bookmark"
+                            },
+                            "Akuntansi Bookmark": {
+                                "description": "Example filter bookmarks by name",
+                                "value": "Akutansi Bookmark"
+                            },
+                            "Anime Bookmark": {
+                                "description": "Example filter bookmarks by name",
+                                "value": "Anime Bookmark"
+                            }
+                        }
+                    }
+                ]
             },
             "post": {
                 "tags": ["Bookmarks"],
@@ -38,19 +69,65 @@
             "get": {
                 "tags": ["Bookmarks"],
                 "summary": "Get bookmark by id",
-                "description": "Get bookmarks by id in database"
+                "description": "Get bookmarks by id in database",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/bookmark_id"
+                    }
+                ]
+                    
             },
             "put": {
                 "tags": ["Bookmarks"],
                 "summary": "Update bookmark by id",
-                "description": "Update bookmark by id in database"
+                "description": "Update bookmark by id in database",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/bookmark_id"
+                    }
+                ]
             },
             "delete": {
                 "tags": ["Bookmarks"],
                 "summary": "Delete bookmark by id",
-                "description": "Delete bookmark by id in database"
+                "description": "Delete bookmark by id in database",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/bookmark_id"
+                    }
+                ]
             }
         }
     },
-    "components": {}
+    "components": {
+        "parameters": {
+            "bookmark_id": {
+                "name": "bookmark_id",
+                "in": "path",
+                "description": "Get bookmark by id",
+                "require": true,
+                "schema": {
+                    "type": "string"
+                },
+                "examples": {
+                    "Frontend Bookmark": {
+                        "description": "Sample bookmark id for Frontend Bookmark",
+                        "value": "1"
+                    },
+                    "Fullstack Bookmark": {
+                        "description": "Sample bookmark id for Fullstack Bookmark",
+                        "value": "2"
+                    },
+                    "Akuntansi Bookmark": {
+                        "description": "Sample bookmark id for Akutansi Bookmark",
+                        "value": "3"
+                    },
+                    "Anime Bookmark": {
+                        "description": "Sample bookmark id for Anime Bookmark",
+                        "value": "4"
+                    }
+                }
+            }
+        }
+    }
 }
