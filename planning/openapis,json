@@ -69,13 +69,12 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#components/schemas/bookmark"
+                                "$ref": "#components/schemas/CreateOrUpdateBookmark"
                             },
                             "examples": {
                                 "Backend Bookmark": {
                                     "description": "Example create bookmark for Backend Bookmark",
                                     "value": {
-                                        "id": "1",
                                         "name": "Backend Bookmark",
                                         "slug": "backend-bookmark",
                                         "version": "1.0.0",
@@ -91,7 +90,6 @@
                                 "Programmer Bookmark": {
                                     "description": "Example create bookmark for Programmer Bookmark",
                                     "value": {
-                                        "id": "2",
                                         "name": "Programmer Bookmark",
                                         "slug": "programmer-bookmark",
                                         "version": "1.0.0",
@@ -106,7 +104,6 @@
                                 "Anime Bookmark": {
                                     "description": "Example create bookmark for Anime Bookmark",
                                     "value": {
-                                        "id": "3",
                                         "name": "Anime Bookmark",
                                         "slug": "Anime-bookmark",
                                         "version": "1.0.0",
@@ -152,7 +149,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#components/schemas/bookmark"
+                                "$ref": "#components/schemas/CreateOrUpdateBookmark"
                             },
                             "examples": {
                                 "Backend Bookmark": {
@@ -218,7 +215,7 @@
     },
     "components": {
         "schemas": {
-            "bookmark": {
+            "Bookmark": {
                 "type": "object",
                 "properties": {
                     "id": {
@@ -257,7 +254,7 @@
                     }
                 }
             },
-            "bookmark-updated": {
+            "CreateOrUpdateBookmark": {
                 "type": "object",
                 "properties": {
                     "name": {
