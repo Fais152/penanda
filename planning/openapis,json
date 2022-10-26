@@ -57,7 +57,58 @@
                             }
                         }
                     }
-                ]
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success get all existing bookmarks",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ArrayBookmarks"
+                                },
+                                "examples": {
+                                    "Success": {
+                                        "description": "Sample success get all bookmark",
+                                        "value": [
+                                            {
+                                                "name": "Backend Bookmark",
+                                                "slug": "backend-bookmark",
+                                                "version": "1.0.0",
+                                                "category": [
+                                                    "Programmer",
+                                                    "Backend developer"
+                                                ],
+                                                "summary": "Bookmark untuk memudahkan pekerjakan backend",
+                                                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                                            },
+                                            {
+                                                "name": "Programmer Bookmark",
+                                                "slug": "programmer-bookmark",
+                                                "version": "1.0.0",
+                                                "category": [
+                                                    "Programmer"
+                                                ],
+                                                "summary": "Bookmark untuk memudahkan pekerjakan Programmer",
+                                                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                                            },
+                                            {
+                                                "name": "Anime Bookmark",
+                                                "slug": "Anime-bookmark",
+                                                "version": "1.0.0",
+                                                "category": [
+                                                    "Hiburan",
+                                                    "Anime"
+                                                ],
+                                                "summary": "Bookmark untuk memudahkan pekerjakan Anime",
+                                                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             },
             "post": {
                 "tags": ["Bookmarks"],
@@ -119,6 +170,9 @@
                             }
                         }
                     }
+                },
+                "responseBody": {
+
                 }
             }
         },
@@ -288,6 +342,12 @@
                         "type": "string",
                         "minLength": 10
                     }
+                }
+            },
+            "ArrayBookmarks": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Bookmark"
                 }
             }
         },
