@@ -60,7 +60,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Success get all existing bookmarks",
+                        "description": "Success get all existing bookmark",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -103,6 +103,33 @@
                                                 "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
                                             }
                                         ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404":{
+                        "description": "Failed get all existing bookmark",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Failed": {
+                                        "description": "Example failed get all existing bookmark",
+                                        "value": {
+                                        "success": false,
+                                        "message": "Page not found"
+                                        }
                                     }
                                 }
                             }
@@ -276,12 +303,12 @@
                         "type": "string"
                     },
                     "name": {
-                        "type": "stirng",
+                        "type": "string",
                         "minLength": 1,
                         "maxLength": 50
                     },
                     "slug": {
-                        "type": "stirng"
+                        "type": "string"
                     },
                     "version": {
                         "type": "stirng",
