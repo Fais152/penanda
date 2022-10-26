@@ -113,15 +113,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "success": {
-                                            "type": "boolean"
-                                        },
-                                        "message": {
-                                            "type": "string"
-                                        }
-                                    }
+                                    "$ref": "#/components/schemas/SuccessOrFailed"
                                 },
                                 "examples": {
                                     "Failed": {
@@ -198,8 +190,85 @@
                         }
                     }
                 },
-                "responseBody": {
-
+                "responses": {
+                    "200": {
+                        "description": "Success create bookmark",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Bookmark"
+                                },
+                                "examples": {
+                                    "Backend Bookmark": {
+                                        "description": "Example create bookmark for Backend Bookmark",
+                                        "value": {
+                                            "id": "1",
+                                            "name": "Backend Bookmark",
+                                            "slug": "backend-bookmark",
+                                            "version": "1.0.0",
+                                            "category": [
+                                                "Programmer",
+                                                "Backend developer"
+                                            ],
+                                            "summary": "Bookmark untuk memudahkan pekerjakan backend",
+                                            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    
+                                        }
+                                    },
+                                    "Programmer Bookmark": {
+                                        "description": "Example create bookmark for Programmer Bookmark",
+                                        "value": {
+                                            "id": "2",
+                                            "name": "Programmer Bookmark",
+                                            "slug": "programmer-bookmark",
+                                            "version": "1.0.0",
+                                            "category": [
+                                                "Programmer"
+                                            ],
+                                            "summary": "Bookmark untuk memudahkan pekerjakan Programmer",
+                                            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    
+                                        }
+                                    },
+                                    "Anime Bookmark": {
+                                        "description": "Example create bookmark for Anime Bookmark",
+                                        "value": {
+                                            "id": "3",
+                                            "name": "Anime Bookmark",
+                                            "slug": "Anime-bookmark",
+                                            "version": "1.0.0",
+                                            "category": [
+                                                "Hiburan",
+                                                "Anime"
+                                            ],
+                                            "summary": "Bookmark untuk memudahkan pekerjakan Anime",
+                                            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404":{
+                        "description": "Failed create bookmark",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SuccessOrFailed"
+                                },
+                                "examples": {
+                                    "Failed": {
+                                        "description": "Example failed create bookmark",
+                                        "value": {
+                                        "success": false,
+                                        "message": "Page not found"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -212,7 +281,87 @@
                     {
                         "$ref": "#/components/parameters/bookmark_id"
                     }
-                ]
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success get bookmark by id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Bookmark"
+                                },
+                                "examples": {
+                                    "Backend Bookmark": {
+                                        "description": "Example create bookmark for Backend Bookmark",
+                                        "value": {
+                                            "id": "1",
+                                            "name": "Backend Bookmark",
+                                            "slug": "backend-bookmark",
+                                            "version": "1.0.0",
+                                            "category": [
+                                                "Programmer",
+                                                "Backend developer"
+                                            ],
+                                            "summary": "Bookmark untuk memudahkan pekerjakan backend",
+                                            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    
+                                        }
+                                    },
+                                    "Programmer Bookmark": {
+                                        "description": "Example create bookmark for Programmer Bookmark",
+                                        "value": {
+                                            "id": "2",
+                                            "name": "Programmer Bookmark",
+                                            "slug": "programmer-bookmark",
+                                            "version": "1.0.0",
+                                            "category": [
+                                                "Programmer"
+                                            ],
+                                            "summary": "Bookmark untuk memudahkan pekerjakan Programmer",
+                                            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    
+                                        }
+                                    },
+                                    "Anime Bookmark": {
+                                        "description": "Example create bookmark for Anime Bookmark",
+                                        "value": {
+                                            "id": "3",
+                                            "name": "Anime Bookmark",
+                                            "slug": "Anime-bookmark",
+                                            "version": "1.0.0",
+                                            "category": [
+                                                "Hiburan",
+                                                "Anime"
+                                            ],
+                                            "summary": "Bookmark untuk memudahkan pekerjakan Anime",
+                                            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404":{
+                        "description": "Failed get bookmark by id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SuccessOrFailed"
+                                },
+                                "examples": {
+                                    "Failed": {
+                                        "description": "Example failed create bookmark",
+                                        "value": {
+                                        "success": false,
+                                        "message": "Page not found"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
                     
             },
             "put": {
@@ -280,6 +429,86 @@
                             }
                         }
                     }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success update bookmark by id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Bookmark"
+                                },
+                                "examples": {
+                                    "Backend Bookmark": {
+                                        "description": "Example create bookmark for Backend Bookmark",
+                                        "value": {
+                                            "id": "1",
+                                            "name": "Backend Bookmark",
+                                            "slug": "backend-bookmark",
+                                            "version": "1.0.0",
+                                            "category": [
+                                                "Programmer",
+                                                "Backend developer"
+                                            ],
+                                            "summary": "Bookmark untuk memudahkan pekerjakan backend",
+                                            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    
+                                        }
+                                    },
+                                    "Programmer Bookmark": {
+                                        "description": "Example create bookmark for Programmer Bookmark",
+                                        "value": {
+                                            "id": "2",
+                                            "name": "Programmer Bookmark",
+                                            "slug": "programmer-bookmark",
+                                            "version": "1.0.0",
+                                            "category": [
+                                                "Programmer"
+                                            ],
+                                            "summary": "Bookmark untuk memudahkan pekerjakan Programmer",
+                                            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    
+                                        }
+                                    },
+                                    "Anime Bookmark": {
+                                        "description": "Example create bookmark for Anime Bookmark",
+                                        "value": {
+                                            "id": "3",
+                                            "name": "Anime Bookmark",
+                                            "slug": "Anime-bookmark",
+                                            "version": "1.0.0",
+                                            "category": [
+                                                "Hiburan",
+                                                "Anime"
+                                            ],
+                                            "summary": "Bookmark untuk memudahkan pekerjakan Anime",
+                                            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404":{
+                        "description": "Failed updated bookmark",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SuccessOrFailed"
+                                },
+                                "examples": {
+                                    "Failed": {
+                                        "description": "Example failed create bookmark",
+                                        "value": {
+                                        "success": false,
+                                        "message": "Page not found"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             },
             "delete": {
@@ -290,7 +519,47 @@
                     {
                         "$ref": "#/components/parameters/bookmark_id"
                     }
-                ]
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success get bookmark by id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SuccessOrFailed"
+                                },
+                                "examples": {
+                                    "Success": {
+                                        "description": "Example failed create bookmark",
+                                        "value": {
+                                        "success": true,
+                                        "message": "Page not found"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404":{
+                        "description": "Failed updated bookmark",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SuccessOrFailed"
+                                },
+                                "examples": {
+                                    "Failed": {
+                                        "description": "Example failed delete bookmark",
+                                        "value": {
+                                        "success": false,
+                                        "message": "Page not found"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     },
@@ -375,6 +644,17 @@
                 "type": "array",
                 "items": {
                     "$ref": "#/components/schemas/Bookmark"
+                }
+            },
+            "SuccessOrFailed": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
                 }
             }
         },
